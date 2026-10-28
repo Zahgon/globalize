@@ -1,8 +1,13 @@
 # Globalize
 
-[![Build Status](https://secure.travis-ci.org/globalizejs/globalize.svg?branch=master)](http://travis-ci.org/globalizejs/globalize)
-[![devDependency Status](https://david-dm.org/globalizejs/globalize/status.svg)](https://david-dm.org/globalizejs/globalize#info=dependencies)
-[![devDependency Status](https://david-dm.org/globalizejs/globalize/dev-status.svg)](https://david-dm.org/globalizejs/globalize#info=devDependencies)
+This repository holds the Go port of Globalize 1.7.1: the module `github.com/globalizejs/globalize-go`
+at its root formats and parses numbers, currencies, dates, plurals, relative times, units and
+messages exactly as the JavaScript library does. Its API mirrors the JavaScript API this document
+and [doc/](doc/) describe: `Globalize.formatNumber` is `globalize.FormatNumber`,
+`new Globalize("de")` is `globalize.New("de")`, and CLDR JSON is passed to `globalize.Load` as
+decoded values (objects as `globalize.Obj`, their keys in file order). `go test ./...` reads CLDR
+JSON from `GLOBALIZE_CLDR` (default `/opt/cldr-data`) and skips when it is not there. The rest of
+this document describes the JavaScript library the port follows.
 
 A JavaScript library for internationalization and localization that leverage the official [Unicode CLDR](http://cldr.unicode.org/) JSON data. The library works both for the browser and as a
 Node.js module.
